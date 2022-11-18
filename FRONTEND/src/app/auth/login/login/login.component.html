@@ -1,0 +1,41 @@
+<!-- HTMl comment-->
+<!--https://angular.io/guide/form-validation-->
+<!--https://material.angular.io/components/button/overview-->
+<!--https://material.angular.io/components/input/overview-->
+<h2>{{option}}</h2>
+
+<form (submit)="onlogin(loginform)" #loginform="ngForm">
+    <div class="center">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput
+            type = "text"
+            ngModel name = "enteredusername"
+            placeholder="Username"
+            required
+            minlength="1"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            #enteredusername = "ngModel"/>
+            <div *ngIf="enteredusername.invalid && (enteredusername.dirty || enteredusername.touched)">Invalid</div>
+            <br>
+        </mat-form-field>      
+    </div>
+        
+    <div class="center">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput
+            type = "password"
+            ngModel name = "enteredpassword"
+            placeholder="Password"
+            required
+            minlength="1"
+            pattern="^([a-zA-Z0-9@*#]{8,15})$"
+            #enteredpassword = "ngModel"/>
+            <div *ngIf="enteredpassword.invalid && (enteredpassword.dirty || enteredpassword.touched)">Invalid</div>
+            <br>
+        </mat-form-field>
+    </div>
+    
+<button mat-raised-button color="primary" type="submit">{{option}}</button>
+</form>

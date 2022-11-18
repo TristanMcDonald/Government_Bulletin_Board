@@ -1,0 +1,22 @@
+<!-- {{ title }}
+<app-post-create></app-post-create>
+<hr>
+<app-post-display></app-post-display> -->
+<!--https://www.w3schools.com/csS/css_align.asp-->
+<!--https://material.angular.io/components/button/overview-->
+<main>
+<div style="margin-left: 10rem;" class="center">
+<h1>Government Bulletin Board</h1>
+
+<nav>
+    <button mat-raised-button routerLink="/">List</button>
+    <button mat-raised-button routerLink="/add">Add</button>
+    <button mat-raised-button routerLink="/login">Login</button>
+    <button mat-raised-button routerLink="/signup">Signup</button>
+</nav>
+
+<br>
+<!-- This is where the route gets displayed -->
+<router-outlet></router-outlet>
+</div>    
+</main>

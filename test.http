@@ -1,0 +1,51 @@
+//==========================================================================
+// api testing
+// https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+GET https://localhost:3000/api HTTP/1.1
+//==========================================================================
+// User sign up testing
+// https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+POST https://localhost:3000/api/users/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "tristan.cole.mcdonald@gmail.com",
+    "password": "Password1234"
+}
+//==========================================================================
+// User login testing
+// https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "bob",
+    "password": "1234"
+}
+//==========================================================================
+// Add post after user has signed in with token
+// https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+POST https://localhost:3000/api/posts HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYiIsInVzZXJpZCI6IjYzNDJiMDM1NjZkNDQ3Y2MwODEwY2RjOCIsImlhdCI6MTY2NzQwOTI2NiwiZXhwIjoxNjY3NDEyODY2fQ.aT8ng5eCkv3FgRosGmM-RdT1Nj-LeejmvSCPNmjvRwM
+
+{
+    "subject": "Corruption",
+    "description": "Corruption within the main cabinet department"
+}
+//==========================================================================
+// Get all posts testing
+###
+GET https://localhost:3000/api/posts HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYiIsInVzZXJpZCI6IjYzNDJiMDM1NjZkNDQ3Y2MwODEwY2RjOCIsImlhdCI6MTY2NTMxNTIzOCwiZXhwIjoxNjY1MzE4ODM4fQ.LEw9ZeNP8E0gQO2R8h6OkD7cdw8dxSRKyQi9uIPk27s
+//==========================================================================
+// Delete post testing
+// https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+DELETE https://localhost:3000/api/posts/6342b28066d447cc0810cdcb HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvYiIsInVzZXJpZCI6IjYzNDJiMDM1NjZkNDQ3Y2MwODEwY2RjOCIsImlhdCI6MTY2NTMxNTIzOCwiZXhwIjoxNjY1MzE4ODM4fQ.LEw9ZeNP8E0gQO2R8h6OkD7cdw8dxSRKyQi9uIPk27s
+//==========================================================================

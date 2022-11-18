@@ -1,0 +1,8 @@
+<!--https://material.angular.io/components/button/overview-->
+<div *ngFor="let post of posts">
+    <mat-card>
+        <mat-card-title>{{post.subject}}</mat-card-title>
+        <mat-card-content>{{post.description}}</mat-card-content>
+        <button (click)="ondelete(post._id)">Delete</button>
+    </mat-card>
+</div>
